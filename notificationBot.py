@@ -39,7 +39,6 @@ class NotificationBot():
         else:
             response = requests.post(
                 url, headers=self.headers, cookies=self.cookies, data=self.data)
-
         return response.text
 
     pass
