@@ -23,6 +23,9 @@ class NotificationBot():
         self.headers = None
         self.data = None
 
+        with open("itemlist.txt", 'r') as file:
+            self.currentitems = set([line.strip() for line in file])
+
     def addHeaders(self, **kwrgs):
         if "cookies" in kwrgs.keys():
             self.cookies = kwrgs["cookies"]
