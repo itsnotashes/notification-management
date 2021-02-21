@@ -24,7 +24,6 @@ class NotificationBot():
         self.data = None
 
     def addHeaders(self, **kwrgs):
-
         if "cookies" in kwrgs.keys():
             self.cookies = kwrgs["cookies"]
         if "headers" in kwrgs.keys():
