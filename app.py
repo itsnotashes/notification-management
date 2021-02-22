@@ -43,4 +43,11 @@ theWhiskeyExchange.addHeaders(headers=headers, data=data)
 response = theWhiskeyExchange.makeRequest(
     "https://www.thewhiskyexchange.com/new-products/standard-whisky", post=True)
 
-print(response, file=open("random.html", 'w'))
+# print(response, file=open("random.html", 'w'))
+print(response)
+
+
+# Tests:
+print("The following items are already present in itemlist:")
+for item in theWhiskeyExchange.currentitems:
+    print(item)
