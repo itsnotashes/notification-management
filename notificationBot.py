@@ -9,6 +9,7 @@ from yaml.loader import FullLoader
 with open("config.yaml", 'r') as file:
     data = yaml.load(file, Loader=FullLoader)
     TELEBOT_TOKEN = data["TELEBOT_TOKEN"]
+    TELEGRAM_GROUP = data["TELEGRAM_GROUP"]
 
 # Configuring Telebot
 bot = telebot.TeleBot(TELEBOT_TOKEN)
@@ -43,4 +44,5 @@ class NotificationBot():
                 url, headers=self.headers, cookies=self.cookies, data=self.data)
         return response.text
 
-    pass
+    def send_notification(self, message):
+        bot.send_message(TELEGRAM_GROUP, message)
